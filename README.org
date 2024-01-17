@@ -1,0 +1,6 @@
+#+Title: Use Neovim as ide
+
+* 基本配置
+- 1 
+- 2
+- 3
