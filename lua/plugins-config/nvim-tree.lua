@@ -24,4 +24,11 @@ nvim_tree.setup({
 	renderer = {
 		group_empty = true,
 	},
+
+  -- project plugin 需要这样设置
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
 })

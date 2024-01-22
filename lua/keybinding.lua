@@ -1,3 +1,5 @@
+-- 插件需要导出的快捷键设置
+local pluginKeys = {}
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 local map = vim.api.nvim_set_keymap
@@ -29,3 +31,23 @@ map("n", "<Leader>jw", "<C-W>j", opt)
 -- 在结对符之间跳转
 map("n", "<Leader>M", "%", opt)
 
+
+--打开或关闭文件浏览器，速记: file list
+map("n", "<Leader>fl", ":NvimTreeToggle<CR>", opt)
+--Buffline 快捷键
+map("n", "gt", ":BufferLineCycleNext<CR>", opt)
+map("n", "gT", ":BufferLineCycleNext<CR>", opt)
+--选择要关闭的Buffer
+map("n", "<Leader>bd", ":BufferLinePickClose<CR>", opt)
+--Telescope 快捷键
+--速记：search in project
+--      find the file
+map("n", "<Leader>sp", ":Telescope live_grep<CR>", opt)
+map("n", "<Leader>ff", ":Telescope find_files<CR>", opt)
+map("n", "<Leader>fp", ":Telescope projects<CR>", opt)
+
+-- lsp 快捷键设置
+pluginKeys.lspKeybinding = function(mapbuf)
+  --rename
+  mapbuf("n","<leader>r",":lus vim.lsp.buf.rename<CR>", opt)
+end

@@ -17,9 +17,7 @@ vim.bo.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftround = true
 -- >> <<时移动长度
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
--- 空格代替tab
+vim.o.shiftwidth = 2 vim.bo.shiftwidth = 2 -- 空格代替tab
 vim.o.expandtab = true
 vim.bo.expandtab = true
 -- 新行对齐当前行
@@ -33,8 +31,8 @@ vim.o.smartcase = true
 vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true
--- 命令行高为2，提供足够的显示空间
-vim.o.cmdheight = 2
+-- 命令行高为1，提供足够的显示空间
+vim.o.cmdheight = 1
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
 vim.bo.autoread = true
