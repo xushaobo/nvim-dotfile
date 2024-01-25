@@ -30,7 +30,11 @@ require("lazy").setup({
     end,
   },
   { "nvim-treesitter/nvim-treesitter" },
+-- lsp
+  -- installer
   { "williamboman/mason.nvim" },
-  { "neovim/nvim-lspconfig" },
   { "williamboman/mason-lspconfig.nvim" },
+  -- Lspconfig
+  { "neovim/nvim-lspconfig" },
+  { "nvimdev/lspsaga.nvim" },
 })

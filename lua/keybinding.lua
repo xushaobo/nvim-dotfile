@@ -1,8 +1,9 @@
 -- 插件需要导出的快捷键设置
-local pluginKeys = {}
+local pluginKey = {}
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 local map = vim.api.nvim_set_keymap
+local bufmap = vim.api.nvim_buf_set_keymap
 local opt = { noremap = true, silent = true }
 
 -- 定义快捷键到行首和行尾
@@ -47,7 +48,10 @@ map("n", "<Leader>ff", ":Telescope find_files<CR>", opt)
 map("n", "<Leader>fp", ":Telescope projects<CR>", opt)
 
 -- lsp 快捷键设置
-pluginKeys.lspKeybinding = function(mapbuf)
+pluginKey.lspList = function(bufnr)
   --rename
-  mapbuf("n","<leader>r",":lus vim.lsp.buf.rename<CR>", opt)
+  bufmap(bufnr, "n","<leader>rn","<cmd>Lspsaga rename<CR>", opt)
 end
+
+
+return pluginKey
